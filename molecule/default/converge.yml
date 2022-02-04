@@ -1,0 +1,15 @@
+---
+- name: converge
+  hosts: all
+  become: yes
+  gather_facts: yes
+
+  roles:
+    - role: ansible-role-update_pip_packages
+      update_pip_package_ignore:
+        - libcomps
+        - PyGObject
+        - pygobject
+        - pyxdg
+        - resolvelib
+        - dbus-python
