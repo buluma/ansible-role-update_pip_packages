@@ -4,7 +4,7 @@ Find and update pip packages.
 
 |GitHub|GitLab|Quality|Downloads|Version|
 |------|------|-------|---------|-------|
-|[![github](https://github.com/buluma/ansible-role-update_pip_packages/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-update_pip_packages/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-update_pip_packages/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-update_pip_packages)|[![quality](https://img.shields.io/ansible/quality/)](https://galaxy.ansible.com/buluma/update_pip_packages)|[![downloads](https://img.shields.io/ansible/role/d/)](https://galaxy.ansible.com/buluma/update_pip_packages)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-update_pip_packages.svg)](https://github.com/buluma/ansible-role-update_pip_packages/releases/)|
+|[![github](https://github.com/buluma/ansible-role-update_pip_packages/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-update_pip_packages/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-update_pip_packages/badges/main/pipeline.svg)](https://gitlab.com/buluma/ansible-role-update_pip_packages)|[![quality](https://img.shields.io/ansible/quality/57928)](https://galaxy.ansible.com/buluma/update_pip_packages)|[![downloads](https://img.shields.io/ansible/role/d/57928)](https://galaxy.ansible.com/buluma/update_pip_packages)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-update_pip_packages.svg)](https://github.com/buluma/ansible-role-update_pip_packages/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
