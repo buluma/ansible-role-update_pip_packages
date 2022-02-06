@@ -24,10 +24,6 @@ molecule:
         tag: "latest"
       - image: "fedora-systemd"
         tag: "34"
-      - image: "fedora-systemd"
-        tag: "latest"
-      - image: "fedora-systemd"
-        tag: "rawhide"
       - image: "opensuse"
         tag: "latest"
 
@@ -47,10 +43,6 @@ testing:
         tag: "latest"
       - image: "fedora-systemd"
         tag: "34"
-      - image: "fedora-systemd"
-        tag: "latest"
-      - image: "fedora-systemd"
-        tag: "rawhide"
       - image: "opensuse"
         tag: "latest"
 
