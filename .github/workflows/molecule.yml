@@ -35,16 +35,20 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - image: "debian"
-            tag: "bullseye"
-          - image: "debian"
-            tag: "bookworm"
-          - image: "fedora"
-            tag: "34"
-          - image: "fedora"
+          - image: "debian-systemd"
             tag: "latest"
-          - image: "fedora"
+          - image: "debian-systemd"
+            tag: "bookworm"
+          - image: "enterpriselinux"
+            tag: "latest"
+          - image: "fedora-systemd"
+            tag: "34"
+          - image: "fedora-systemd"
+            tag: "latest"
+          - image: "fedora-systemd"
             tag: "rawhide"
+          - image: "opensuse"
+            tag: "latest"
     steps:
       - name: checkout
         uses: actions/checkout@v2.4.0
