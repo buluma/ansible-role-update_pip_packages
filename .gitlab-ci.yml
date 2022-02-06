@@ -16,12 +16,20 @@ molecule:
   retry: 1
   parallel:
     matrix:
-      - image: "fedora"
-        tag: "34"
-      - image: "fedora"
+      - image: "debian-systemd"
         tag: "latest"
-      - image: "fedora"
+      - image: "debian-systemd"
+        tag: "bookworm"
+      - image: "enterpriselinux"
+        tag: "latest"
+      - image: "fedora-systemd"
+        tag: "34"
+      - image: "fedora-systemd"
+        tag: "latest"
+      - image: "fedora-systemd"
         tag: "rawhide"
+      - image: "opensuse"
+        tag: "latest"
 
 testing:
   script:
@@ -31,21 +39,21 @@ testing:
   retry: 1
   parallel:
     matrix:
-      - image: "alpine"
+      - image: "debian-systemd"
         tag: "latest"
-      - image: "amazonlinux"
+      - image: "debian-systemd"
+        tag: "bookworm"
+      - image: "enterpriselinux"
         tag: "latest"
+      - image: "fedora-systemd"
+        tag: "34"
+      - image: "fedora-systemd"
+        tag: "latest"
+      - image: "fedora-systemd"
+        tag: "rawhide"
       - image: "opensuse"
         tag: "latest"
-      - image: "debian"
-        tag: "bookworm"
-      - image: "fedora"
-        tag: "34"
-      - image: "ubuntu"
-        tag: "latest"
-      - image: "ubuntu"
-        tag: "bionic"
 
 galaxy:
   script:
-    - ansible-galaxy role info ${CI_PROJECT_NAMESPACE}.update_pip_packages
+    - ansible-galaxy role info buluma.update_pip_packages
