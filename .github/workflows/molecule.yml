@@ -38,8 +38,8 @@ jobs:
         config:
           - image: "debian-systemd"
             tag: "latest"
-          - image: "debian-systemd"
-            tag: "bookworm"
+          # - image: "debian-systemd"  # TODO: check on PYAML on base
+          #  tag: "bookworm"
           - image: "enterpriselinux"
             tag: "latest"
           - image: "fedora-systemd"
