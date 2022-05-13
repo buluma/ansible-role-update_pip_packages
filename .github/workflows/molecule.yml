@@ -10,7 +10,7 @@ on:
   schedule:
     - cron: '41 21 * * *'
   workflow_dispatch:
-  push: {branches: ["master", "main", "testing"]}
+  push: {branches: ["master", "main"]}
 
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
@@ -38,13 +38,13 @@ jobs:
         config:
           - image: "debian-systemd"
             tag: "latest"
-          # - image: "debian-systemd"  # TODO: check on PYAML on base
-          #  tag: "bookworm"
-          # - image: "enterpriselinux"   # TODO: check on PYAML on base
-          #  tag: "latest"
+          - image: "debian-systemd"
+            tag: "bookworm"
+          - image: "enterpriselinux"
+            tag: "latest"
           - image: "fedora-systemd"
             tag: "34"
-          - image: "opensuse"
+          - image: "docker-opensuse-systemd"
             tag: "latest"
     steps:
       - name: checkout
