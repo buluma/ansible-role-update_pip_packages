@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-update_pip_packages/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-update_pip_packages/compare/1.0.9...HEAD)
+
+**Closed issues:**
+
+- check on PYAML on base [\#14](https://github.com/buluma/ansible-role-update_pip_packages/issues/14)
+
 ## [1.0.9](https://github.com/buluma/ansible-role-update_pip_packages/tree/1.0.9) (2022-03-28)
 
 [Full Changelog](https://github.com/buluma/ansible-role-update_pip_packages/compare/1.0.8...1.0.9)
