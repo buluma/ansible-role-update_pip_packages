@@ -94,7 +94,6 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 |container|tags|
 |---------|----|
 |debian|all|
-|el|8|
 |fedora|34|
 |opensuse|all|
 
