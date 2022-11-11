@@ -11,9 +11,12 @@ galaxy_info:
     - name: Debian
       versions:
         - all
+    - name: EL
+      versions:
+        - "8"
     - name: Fedora
       versions:
-        - "34"
+        - all
     - name: opensuse
       versions:
         - all
