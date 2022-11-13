@@ -51,7 +51,6 @@
 **Merged pull requests:**
 
 - version bump/fedora 34 [\#10](https://github.com/buluma/ansible-role-update_pip_packages/pull/10) ([buluma](https://github.com/buluma))
-- Update .gitlab-ci.yml [\#9](https://github.com/buluma/ansible-role-update_pip_packages/pull/9) ([buluma](https://github.com/buluma))
 
 ## [1.0.3](https://github.com/buluma/ansible-role-update_pip_packages/tree/1.0.3) (2022-02-06)
 
@@ -63,6 +62,7 @@
 
 **Merged pull requests:**
 
+- Update .gitlab-ci.yml [\#9](https://github.com/buluma/ansible-role-update_pip_packages/pull/9) ([buluma](https://github.com/buluma))
 - use robertdebock [\#8](https://github.com/buluma/ansible-role-update_pip_packages/pull/8) ([buluma](https://github.com/buluma))
 
 ## [1.0.1](https://github.com/buluma/ansible-role-update_pip_packages/tree/1.0.1) (2022-02-04)
