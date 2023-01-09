@@ -1,6 +1,3 @@
----
-# tasks file for update_pip_packages
-
 - name: Import assert.yml
   ansible.builtin.import_tasks: assert.yml
   run_once: yes
@@ -41,13 +38,13 @@
 
 - name: Add pip to list
   ansible.builtin.set_fact:
-    update_pip_packages_clients: "{{ [ update_pip_packages_pip.stdout ] }}"
+    update_pip_packages_clients: "{{ [update_pip_packages_pip.stdout] }}"
   when:
     - update_pip_packages_pip is succeeded
 
 - name: Add pip3 to list
   ansible.builtin.set_fact:
-    update_pip_packages_clients: "{{ update_pip_packages_clients + [ update_pip_packages_pip3.stdout ] }}"
+    update_pip_packages_clients: "{{ update_pip_packages_clients + [update_pip_packages_pip3.stdout] }}"
   when:
     - update_pip_packages_pip3 is succeeded
 
