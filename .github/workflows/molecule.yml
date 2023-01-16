@@ -44,7 +44,7 @@ jobs:
       matrix:
         config:
           - image: "debian"
-            tag: "latest"
+            tag: "buster"
           - image: "debian"
             tag: "bookworm"
           - image: "enterpriselinux"
