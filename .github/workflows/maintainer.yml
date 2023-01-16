@@ -25,6 +25,7 @@ concurrency:
 jobs:
   # This workflow contains a single job called "build"
   requirements:
+    name: Ansible Graphviz
     runs-on: ubuntu-20.04
     steps:
       - name: checkout
@@ -49,6 +50,7 @@ jobs:
           branch: png
   
   update_release_draft:
+    name: Release Draft
     runs-on: ubuntu-latest
     steps:
 
@@ -61,6 +63,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   changelog_draft:
+    name: Changelog Update
+    needs: update_release_draft
     runs-on: ubuntu-latest
 
     steps:
@@ -95,6 +99,7 @@ jobs:
           CHANGELOG_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
   to_do_issue:
+    name: TO DO Checks
     runs-on: "ubuntu-20.04"
     steps:
       - uses: "actions/checkout@v3"
