@@ -43,19 +43,19 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - image: "debian-systemd"
+          - image: "debian"
             tag: "latest"
-          - image: "debian-systemd"
-            tag: "buster"
+          - image: "debian"
+            tag: "bookworm"
           - image: "enterpriselinux"
             tag: "8"
-          - image: "fedora-systemd"
-            tag: "35"
-          - image: "fedora-systemd"
+          - image: "fedora"
+            tag: "36"
+          - image: "fedora"
             tag: "latest"
-          - image: "fedora-systemd"
+          - image: "fedora"
             tag: "rawhide"
-          - image: "docker-opensuse-systemd"
+          - image: "opensuse"
             tag: "latest"
     steps:
       - name: checkout
