@@ -5,14 +5,21 @@
 
 name: Auto Merge Dependency Updates
 
-on:
-  - pull_request_target
+on: pull_request
+
+permissions:
+  contents: write
+  pull-requests: write  # Needed if in a private repository
 
 jobs:
-  run:
+  dependabot:
     runs-on: ubuntu-latest
+    if: ${{ github.actor == 'buluma' || github.actor == 'dependabot[bot]' }}
     steps:
-      - name: Auto Merge Dependabot Updates
-        uses: buluma/gh-action-auto-merge-dependabot-updates@1.0.5
-        with:
-          allowed-actors: buluma, dependabot-preview[bot], dependabot[bot]
+      - name: Enable auto-merge for Dependabot PRs
+        run: gh pr merge --auto --merge "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          # GitHub provides this variable in the CI env. You don't
+          # need to add anything to the secrets vault.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
