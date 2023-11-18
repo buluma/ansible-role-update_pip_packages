@@ -1,0 +1,112 @@
+---
+# This is a basic workflow to help you get started with Actions
+
+name: Maintainers CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+    paths-ignore:
+      - '**/README.md'
+      - '**/CHANGELOG.md'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  pull_request:
+    # Only following types are handled by the action, but one can default to all as well
+    types: [opened, reopened, synchronize]
+
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  requirements:
+    name: Ansible Graphviz
+    runs-on: ubuntu-20.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          path: ${{ github.repository }}
+      - name: create png
+        uses: buluma/graphviz-action@1.0.0
+      - name: Commit files
+        run: |
+          cd ${{ github.repository }}
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add requirements.dot requirements.png
+          git commit -m "Add generated files"
+      - name: save to png branch
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          directory: ${{ github.repository }}
+          force: true
+          branch: png
+  
+  update_release_draft:
+    name: Release Draft
+    runs-on: ubuntu-latest
+    steps:
+
+      # Drafts your next Release notes as Pull Requests are merged into "master"
+      - uses: release-drafter/release-drafter@v5
+        # (Optional) specify config name to use, relative to .github/. Default: release-drafter.yml
+        # with:
+        #   config-name: my-config.yml
+        #   disable-autolabeler: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  changelog_draft:
+    name: Changelog Update
+    needs: update_release_draft
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout dj-wasabi-release repo
+        uses: actions/checkout@v3
+        with:
+          repository: dj-wasabi/dj-wasabi-release
+          path: dj-wasabi-release
+
+      - name: Checkout current repo
+        uses: actions/checkout@v3
+        with:
+          path: master
+
+      - name: Commit Changelog file
+        run: |
+          # We are cloned in the 'main' directory and the dj-wasabi-release
+          # repository is the 'dj-wasabi-release' next to 'main'
+          cd master
+          # Generate CHANGELOG.md file
+          ../dj-wasabi-release/release.sh -d
+          # Let commit the changes if there are any? (Well there should be!)
+          if [[ $(git status | grep -c 'CHANGELOG.md' || true) -gt 0 ]]
+            then  echo "Committing file"
+                  git config --global user.name 'Shadow Walker [GH bot]'
+                  git config --global user.email 'github@buluma.me.ke'
+                  git add CHANGELOG.md
+                  git commit -m "Updated CHANGELOG.md on \"$(date "+%Y-%m-%d %H:%M:%S")\"" CHANGELOG.md
+                  git push
+          fi
+        env:
+          CHANGELOG_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+  to_do_issue:
+    name: TO DO Checks
+    runs-on: "ubuntu-20.04"
+    steps:
+      - uses: "actions/checkout@v3"
+      - name: "TODO to Issue"
+        uses: "alstr/todo-to-issue-action@v4"
+        id: "todo"
+        with:
+          USER_PROJECTS: buluma/Ansible/To do
+          PROJECTS_SECRET: ${{ secrets.PROJECTS_SECRET }}

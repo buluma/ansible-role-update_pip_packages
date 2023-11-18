@@ -32,7 +32,11 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: checkout
+<<<<<<< HEAD
         uses: actions/checkout@v4
+=======
+        uses: actions/checkout@v3
+>>>>>>> a6c2bcb65515f2c85068d09b8676eba72477529b
       - name: ansible-lint
         uses: ansible-community/ansible-lint-action@main
   test:
@@ -43,6 +47,7 @@ jobs:
       fail-fast: false
       matrix:
         config:
+<<<<<<< HEAD
           - image: "debian-systemd"
             tag: "latest"
           - image: "debian-systemd"
@@ -54,6 +59,21 @@ jobs:
           - image: "fedora-systemd"
             tag: "latest"
           - image: "docker-opensuse-systemd"
+=======
+          - image: "debian"
+            tag: "buster"
+          - image: "debian"
+            tag: "bookworm"
+          - image: "enterpriselinux"
+            tag: "8"
+          - image: "fedora"
+            tag: "36"
+          - image: "fedora"
+            tag: "latest"
+          - image: "fedora"
+            tag: "rawhide"
+          - image: "opensuse"
+>>>>>>> a6c2bcb65515f2c85068d09b8676eba72477529b
             tag: "latest"
     steps:
       - name: checkout
@@ -65,7 +85,11 @@ jobs:
       # - name: parse apparmor for mysql
       #   run: sudo apparmor_parser -R /etc/apparmor.d/usr.sbin.mysqld
       - name: molecule
+<<<<<<< HEAD
         uses: buluma/molecule-action@v5.1.1
+=======
+        uses: buluma/molecule-action@v5.0.5
+>>>>>>> a6c2bcb65515f2c85068d09b8676eba72477529b
         with:
           image: ${{ matrix.config.image }}
           tag: ${{ matrix.config.tag }}
