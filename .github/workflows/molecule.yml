@@ -44,8 +44,6 @@ jobs:
       matrix:
         config:
           - image: "debian-systemd"
-            tag: "latest"
-          - image: "debian-systemd"
             tag: "bullseye"
           - image: "enterpriselinux"
             tag: "8"
