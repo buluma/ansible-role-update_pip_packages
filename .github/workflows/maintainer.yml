@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: ${{ github.repository }}
       - name: create png
@@ -70,13 +70,13 @@ jobs:
 
     steps:
       - name: Checkout dj-wasabi-release repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: dj-wasabi/dj-wasabi-release
           path: dj-wasabi-release
 
       - name: Checkout current repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: master
 
@@ -103,7 +103,7 @@ jobs:
     name: TO DO Checks
     runs-on: "ubuntu-20.04"
     steps:
-      - uses: "actions/checkout@v3"
+      - uses: "actions/checkout@v4"
       - name: "TODO to Issue"
         uses: "buluma/todo-to-issue-action@v2.0.2"
         id: "todo"
