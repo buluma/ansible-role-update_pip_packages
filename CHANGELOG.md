@@ -54,6 +54,10 @@
 
 [Full Changelog](https://github.com/buluma/ansible-role-update_pip_packages/compare/1.0.4...1.0.5)
 
+**Merged pull requests:**
+
+- Not setuptools. [\#11](https://github.com/buluma/ansible-role-update_pip_packages/pull/11) ([buluma](https://github.com/buluma))
+
 ## [1.0.4](https://github.com/buluma/ansible-role-update_pip_packages/tree/1.0.4) (2022-02-12)
 
 [Full Changelog](https://github.com/buluma/ansible-role-update_pip_packages/compare/1.0.3...1.0.4)
@@ -72,7 +76,6 @@
 
 **Merged pull requests:**
 
-- Not setuptools. [\#11](https://github.com/buluma/ansible-role-update_pip_packages/pull/11) ([buluma](https://github.com/buluma))
 - Update .gitlab-ci.yml [\#9](https://github.com/buluma/ansible-role-update_pip_packages/pull/9) ([buluma](https://github.com/buluma))
 - use robertdebock [\#8](https://github.com/buluma/ansible-role-update_pip_packages/pull/8) ([buluma](https://github.com/buluma))
 
