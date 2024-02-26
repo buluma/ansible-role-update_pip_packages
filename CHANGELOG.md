@@ -1,5 +1,9 @@
 # Changelog
 
+## [24.2.26](https://github.com/buluma/ansible-role-update_pip_packages/tree/24.2.26) (2024-02-26)
+
+[Full Changelog](https://github.com/buluma/ansible-role-update_pip_packages/compare/1.1.0...24.2.26)
+
 ## [1.1.0](https://github.com/buluma/ansible-role-update_pip_packages/tree/1.1.0) (2024-01-20)
 
 [Full Changelog](https://github.com/buluma/ansible-role-update_pip_packages/compare/1.0.10...1.1.0)
