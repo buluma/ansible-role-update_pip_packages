@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Bump buluma/dependabot-auto-merge-action from 2.1.1 to 2.1.2 [\#34](https://github.com/buluma/ansible-role-update_pip_packages/pull/34) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump buluma/gh-action-auto-merge-dependabot-updates from 1.0.7 to 1.0.8 [\#33](https://github.com/buluma/ansible-role-update_pip_packages/pull/33) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump release-drafter/release-drafter from 5 to 6 [\#32](https://github.com/buluma/ansible-role-update_pip_packages/pull/32) ([dependabot[bot]](https://github.com/apps/dependabot))
 
