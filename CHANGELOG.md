@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Bump buluma/dependabot-auto-merge-action from 2.1.1 to 2.1.2 [\#34](https://github.com/buluma/ansible-role-update_pip_packages/pull/34) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump buluma/gh-action-auto-merge-dependabot-updates from 1.0.7 to 1.0.8 [\#33](https://github.com/buluma/ansible-role-update_pip_packages/pull/33) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump release-drafter/release-drafter from 5 to 6 [\#32](https://github.com/buluma/ansible-role-update_pip_packages/pull/32) ([dependabot[bot]](https://github.com/apps/dependabot))
 
@@ -67,10 +68,6 @@
 
 [Full Changelog](https://github.com/buluma/ansible-role-update_pip_packages/compare/1.0.4...1.0.5)
 
-**Merged pull requests:**
-
-- Not setuptools. [\#11](https://github.com/buluma/ansible-role-update_pip_packages/pull/11) ([buluma](https://github.com/buluma))
-
 ## [1.0.4](https://github.com/buluma/ansible-role-update_pip_packages/tree/1.0.4) (2022-02-12)
 
 [Full Changelog](https://github.com/buluma/ansible-role-update_pip_packages/compare/1.0.3...1.0.4)
@@ -114,6 +111,7 @@
 
 **Merged pull requests:**
 
+- Not setuptools. [\#11](https://github.com/buluma/ansible-role-update_pip_packages/pull/11) ([buluma](https://github.com/buluma))
 - fixes \#4 [\#5](https://github.com/buluma/ansible-role-update_pip_packages/pull/5) ([buluma](https://github.com/buluma))
 - Bump alstr/todo-to-issue-action from 2.3 to 4.6 [\#3](https://github.com/buluma/ansible-role-update_pip_packages/pull/3) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump buluma/galaxy-action from 1.0.1 to 1.1.0 [\#2](https://github.com/buluma/ansible-role-update_pip_packages/pull/2) ([dependabot[bot]](https://github.com/apps/dependabot))
