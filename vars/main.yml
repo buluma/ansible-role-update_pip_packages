@@ -4,6 +4,8 @@
 _update_pip_packages_requirements:
   default:
     - which
+    - cairo
+    - pycairo
   Debian:
     - debianutils
 

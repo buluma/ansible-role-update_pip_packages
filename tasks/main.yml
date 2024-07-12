@@ -24,7 +24,7 @@
   rescue:
     - name: No pip
       ansible.builtin.debug:
-        msg: "There is false pip."
+        msg: "There is no pip installed."
 
 - name: Check if pip3 is used
   block:
@@ -38,7 +38,7 @@
   rescue:
     - name: No pip3
       ansible.builtin.debug:
-        msg: "There is false pip3."
+        msg: "There is no pip3 installed."
 
 - name: Add pip to list
   ansible.builtin.set_fact:
