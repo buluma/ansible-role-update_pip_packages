@@ -4,37 +4,10 @@
   become: true
   gather_facts: false
 
-  tasks:
-    - name: Check Python version
-      ansible.builtin.command: python3 --version
-      register: python_version
-  
-    - debug:
-        msg: "Python version: {{ python_version.stdout }}"
-  
-    - name: Ensure Python 3 is installed
-      ansible.builtin.yum:
-        name: python3
-        state: present
-      when: ansible_os_family == 'RedHat'
-  
-    - name: Ensure Python 3 is installed
-      ansible.builtin.apt:
-        name: python3
-        state: present
-      when: ansible_os_family == 'Debian'
-  
-    - name: Install required Python packages
-      ansible.builtin.pip:
-        name:
-          - ansible
-        state: present
-      become: true
-
-  # roles:
-    # - role: buluma.bootstrap
-    # - role: buluma.epel
-    # - role: buluma.buildtools
-    # - role: buluma.python_pip
-    #   python_pip_modules:
-    #     - name: ansible
+  roles:
+    - role: buluma.bootstrap
+    - role: buluma.epel
+    - role: buluma.buildtools
+    - role: buluma.python_pip
+      python_pip_modules:
+        - name: ansible
