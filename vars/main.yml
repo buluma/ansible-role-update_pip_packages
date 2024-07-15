@@ -4,12 +4,12 @@
 _update_pip_packages_requirements:
   default:
     - which
-    - libcairo2-dev
-    - libglib2.0-dev
-    - libgirepository1.0-dev
-    - libffi-dev
-    - cairo
-    - pycairo
+    # - libcairo2-dev
+    # - libglib2.0-dev
+    # - libgirepository1.0-dev
+    # - libffi-dev
+    # - cairo
+    # - pycairo
   Debian:
     - debianutils
 
