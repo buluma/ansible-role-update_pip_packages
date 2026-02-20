@@ -41,7 +41,7 @@ jobs:
       matrix:
         distro:
           - image: "docker-molecule-images"
-            tag: "latest"
+            tag: "debian_latest"
           - image: "docker-molecule-images"
             tag: "bookworm"
           - image: "docker-molecule-images"
@@ -51,7 +51,13 @@ jobs:
           - image: "enterpriselinux"
             tag: "latest"
           - image: "docker-molecule-images"
-            tag: "latest"
+            tag: "fedora_latest"
+          - image: "docker-molecule-images"
+            tag: "fedora42"
+          - image: "docker-molecule-images"
+            tag: "fedora44"
+          - image: "docker-molecule-images"
+            tag: "fedora45"
           - image: "docker-molecule-images"
             tag: "opensuse"
     steps:

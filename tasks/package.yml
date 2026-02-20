@@ -1,9 +1,8 @@
 ---
-
 - name: package | Update package {{ package.key }}
   ansible.builtin.pip:
     name: "{{ package.key }}"
-    state: latest  # noqa package-latest
+    state: latest # noqa package-latest
   environment:
     path: "/bin:/usr/local/bin"
   when:

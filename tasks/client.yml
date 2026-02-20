@@ -1,5 +1,4 @@
 ---
-
 - name: client | Check for broken requirements before changes
   ansible.builtin.command:
     cmd: "{{ client }} check"

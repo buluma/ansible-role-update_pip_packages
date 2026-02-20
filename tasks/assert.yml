@@ -1,5 +1,4 @@
 ---
-
 - name: assert | Test update_pip_packages_clients
   ansible.builtin.assert:
     that:
