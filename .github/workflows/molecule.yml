@@ -44,20 +44,14 @@ jobs:
             tag: "debian_latest"
           - image: "docker-molecule-images"
             tag: "bookworm"
-          - image: "docker-molecule-images"
-            tag: "bullseye"
           - image: "enterpriselinux"
             tag: "latest"
           - image: "docker-molecule-images"
             tag: "fedora_latest"
           - image: "docker-molecule-images"
-            tag: "fedora42"
-          - image: "docker-molecule-images"
-            tag: "fedora44"
-          - image: "docker-molecule-images"
             tag: "fedora45"
           - image: "docker-molecule-images"
-            tag: "opensuse"
+            tag: "opensuse-tumbleweed"
     steps:
       - name: checkout
         uses: actions/checkout@v6
