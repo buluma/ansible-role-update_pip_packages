@@ -12,69 +12,71 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 
 ```yaml
 ---
-- name: converge
-  hosts: all
-  become: true
-  gather_facts: true
+  - name: converge
+    hosts: all
+    become: true
+    gather_facts: true
 
-  pre_tasks:
-    - name: Update apt cache.
-      apt: update_cache=yes cache_valid_time=600
-      when: ansible_os_family == 'Debian'
-      changed_when: false
+    pre_tasks:
+      - name: Update apt cache.
+        apt: update_cache=yes cache_valid_time=600
+        when: ansible_os_family == 'Debian'
+        changed_when: false
 
-    - name: Check if python3.11 EXTERNALLY-MANAGED file exists
-      ansible.builtin.stat:
-        path: /usr/lib/python3.11/EXTERNALLY-MANAGED
-      register: externally_managed_file_py311
+      - name: Check if python3.11 EXTERNALLY-MANAGED file exists
+        ansible.builtin.stat:
+          path: /usr/lib/python3.11/EXTERNALLY-MANAGED
+        register: externally_managed_file_py311
 
-    - name: Rename python3.11 EXTERNALLY-MANAGED file if it exists
-      ansible.builtin.command:
-        cmd: mv /usr/lib/python3.11/EXTERNALLY-MANAGED /usr/lib/python3.11/EXTERNALLY-MANAGED.old
-      when: externally_managed_file_py311.stat.exists
-      args:
-        creates: /usr/lib/python3.11/EXTERNALLY-MANAGED.old
+      - name: Rename python3.11 EXTERNALLY-MANAGED file if it exists
+        ansible.builtin.command:
+          cmd: mv /usr/lib/python3.11/EXTERNALLY-MANAGED 
+            /usr/lib/python3.11/EXTERNALLY-MANAGED.old
+        when: externally_managed_file_py311.stat.exists
+        args:
+          creates: /usr/lib/python3.11/EXTERNALLY-MANAGED.old
 
-    - name: Check if python3.12 EXTERNALLY-MANAGED file exists
-      ansible.builtin.stat:
-        path: /usr/lib/python3.12/EXTERNALLY-MANAGED
-      register: externally_managed_file_py312
+      - name: Check if python3.12 EXTERNALLY-MANAGED file exists
+        ansible.builtin.stat:
+          path: /usr/lib/python3.12/EXTERNALLY-MANAGED
+        register: externally_managed_file_py312
 
-    - name: Rename python3.12 EXTERNALLY-MANAGED file if it exists
-      ansible.builtin.command:
-        cmd: mv /usr/lib/python3.12/EXTERNALLY-MANAGED /usr/lib/python3.12/EXTERNALLY-MANAGED.old
-      when: externally_managed_file_py312.stat.exists
-      args:
-        creates: /usr/lib/python3.12/EXTERNALLY-MANAGED.old
+      - name: Rename python3.12 EXTERNALLY-MANAGED file if it exists
+        ansible.builtin.command:
+          cmd: mv /usr/lib/python3.12/EXTERNALLY-MANAGED 
+            /usr/lib/python3.12/EXTERNALLY-MANAGED.old
+        when: externally_managed_file_py312.stat.exists
+        args:
+          creates: /usr/lib/python3.12/EXTERNALLY-MANAGED.old
 
-  roles:
-    - role: buluma.update_pip_packages
-      update_pip_package_ignore:
-        - libcomps
-        - PyGObject
-        - pygobject
-        - pyxdg
-        - resolvelib
-        - dbus-python
-        - setuptools
+    roles:
+      - role: buluma.update_pip_packages
+        update_pip_package_ignore:
+          - libcomps
+          - PyGObject
+          - pygobject
+          - pyxdg
+          - resolvelib
+          - dbus-python
+          - setuptools
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-update_pip_packages/blob/master/molecule/default/prepare.yml):
 
 ```yaml
 ---
-- name: prepare
-  hosts: all
-  become: true
-  gather_facts: false
+  - name: prepare
+    hosts: all
+    become: true
+    gather_facts: false
 
-  roles:
-    - role: buluma.bootstrap
-    - role: buluma.epel
-    - role: buluma.buildtools
-    - role: buluma.python_pip
-      python_pip_modules:
-        - name: ansible
+    roles:
+      - role: buluma.bootstrap
+      - role: buluma.epel
+      - role: buluma.buildtools
+      - role: buluma.python_pip
+        python_pip_modules:
+          - name: ansible
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.

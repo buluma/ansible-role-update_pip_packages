@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           path: ${{ github.repository }}
       - name: create png
@@ -43,7 +43,7 @@ jobs:
           git add requirements.dot requirements.png
           git commit -m "Add generated files"
       - name: save to png branch
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           directory: ${{ github.repository }}
@@ -70,13 +70,13 @@ jobs:
 
     steps:
       - name: Checkout dj-wasabi-release repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           repository: dj-wasabi/dj-wasabi-release
           path: dj-wasabi-release
 
       - name: Checkout current repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           path: master
 
@@ -103,7 +103,7 @@ jobs:
     name: TO DO Checks
     runs-on: "ubuntu-20.04"
     steps:
-      - uses: "actions/checkout@v4"
+      - uses: "actions/checkout@v6"
       - name: "TODO to Issue"
         uses: "buluma/todo-to-issue-action@v2.0.2"
         id: "todo"
