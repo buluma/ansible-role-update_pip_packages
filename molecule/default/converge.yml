@@ -17,7 +17,7 @@
 
   - name: Rename python3.11 EXTERNALLY-MANAGED file if it exists
     ansible.builtin.command:
-      cmd: mv /usr/lib/python3.11/EXTERNALLY-MANAGED 
+      cmd: mv /usr/lib/python3.11/EXTERNALLY-MANAGED
         /usr/lib/python3.11/EXTERNALLY-MANAGED.old
     when: externally_managed_file_py311.stat.exists
     args:
@@ -30,7 +30,7 @@
 
   - name: Rename python3.12 EXTERNALLY-MANAGED file if it exists
     ansible.builtin.command:
-      cmd: mv /usr/lib/python3.12/EXTERNALLY-MANAGED 
+      cmd: mv /usr/lib/python3.12/EXTERNALLY-MANAGED
         /usr/lib/python3.12/EXTERNALLY-MANAGED.old
     when: externally_managed_file_py312.stat.exists
     args:

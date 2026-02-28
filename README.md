@@ -30,7 +30,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 
   - name: Rename python3.11 EXTERNALLY-MANAGED file if it exists
     ansible.builtin.command:
-      cmd: mv /usr/lib/python3.11/EXTERNALLY-MANAGED 
+      cmd: mv /usr/lib/python3.11/EXTERNALLY-MANAGED
         /usr/lib/python3.11/EXTERNALLY-MANAGED.old
     when: externally_managed_file_py311.stat.exists
     args:
@@ -43,7 +43,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 
   - name: Rename python3.12 EXTERNALLY-MANAGED file if it exists
     ansible.builtin.command:
-      cmd: mv /usr/lib/python3.12/EXTERNALLY-MANAGED 
+      cmd: mv /usr/lib/python3.12/EXTERNALLY-MANAGED
         /usr/lib/python3.12/EXTERNALLY-MANAGED.old
     when: externally_managed_file_py312.stat.exists
     args:
@@ -148,4 +148,3 @@ If you find issues, please register them on [GitHub](https://github.com/buluma/a
 ## [Author Information](#author-information)
 
 [buluma](https://buluma.github.io/)
-
