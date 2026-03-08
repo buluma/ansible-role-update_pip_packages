@@ -10,12 +10,16 @@ on:
     branches:
       - master
       - main
+      - codex
+      - testing
   pull_request:
     branches:
       - master
       - main
+      - codex
+      - testing
   schedule:
-    - cron: "41 21 21 * *"
+    - cron: '41 21 21 * *'
 
   workflow_dispatch:
 
@@ -40,18 +44,16 @@ jobs:
       fail-fast: false
       matrix:
         distro:
-          - image: "docker-molecule-images"
-            tag: "debian_latest"
-          - image: "docker-molecule-images"
+          - image: "debian"
+            tag: "latest"
+          - image: "debian"
             tag: "bookworm"
+          - image: "debian"
+            tag: "bullseye"
           - image: "enterpriselinux"
             tag: "latest"
-          - image: "docker-molecule-images"
-            tag: "fedora_latest"
-          - image: "docker-molecule-images"
-            tag: "fedora45"
-          - image: "docker-molecule-images"
-            tag: "opensuse-tumbleweed"
+          - image: "fedora"
+            tag: "latest"
     steps:
       - name: checkout
         uses: actions/checkout@v6
