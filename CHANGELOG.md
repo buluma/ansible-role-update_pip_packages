@@ -1,5 +1,14 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-update_pip_packages/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-update_pip_packages/compare/26.6.0...HEAD)
+
+**Closed issues:**
+
+- Update action [\#29](https://github.com/buluma/ansible-role-update_pip_packages/issues/29)
+- rebuild action [\#28](https://github.com/buluma/ansible-role-update_pip_packages/issues/28)
+
 ## [26.6.0](https://github.com/buluma/ansible-role-update_pip_packages/tree/26.6.0) (2026-06-14)
 
 [Full Changelog](https://github.com/buluma/ansible-role-update_pip_packages/compare/24.2.26...26.6.0)
