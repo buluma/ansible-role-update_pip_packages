@@ -16,6 +16,9 @@ galaxy_info:
     - name: Fedora
       versions:
         - all
+    - name: Ubuntu
+      versions:
+        - all
   galaxy_tags:
     - updatepippackages
     - pip
