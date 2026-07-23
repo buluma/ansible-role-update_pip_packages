@@ -3,6 +3,7 @@
   ansible.builtin.command:
     cmd: "{{ client }} check"
   changed_when: false
+  failed_when: false
 
 - name: client | Get all installed packages for {{ client }}
   community.general.pip_package_info:
@@ -23,3 +24,4 @@
   ansible.builtin.command:
     cmd: "{{ client }} check"
   changed_when: false
+  failed_when: false

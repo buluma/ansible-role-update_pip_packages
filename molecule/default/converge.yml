@@ -46,3 +46,4 @@
         - resolvelib
         - dbus-python
         - setuptools
+        - gpg
