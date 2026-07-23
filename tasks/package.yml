@@ -3,7 +3,6 @@
   ansible.builtin.pip:
     name: "{{ package.key }}"
     state: latest # noqa package-latest
-    extra_args: --ignore-installed
   environment:
     path: "/bin:/usr/local/bin"
   when:

@@ -47,3 +47,11 @@
         - dbus-python
         - setuptools
         - gpg
+        - python-apt
+        - python3-apt
+        - six
+        - systemd-python
+        - dnf
+        - libdnf5
+        - libdnf5_cli
+        - rpm
