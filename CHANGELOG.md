@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-update_pip_packages/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-update_pip_packages/compare/26.6.2...HEAD)
+
+**Merged pull requests:**
+
+- Bump release-drafter/release-drafter from 7 to 7.6.0 [\#42](https://github.com/buluma/ansible-role-update_pip_packages/pull/42) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [26.6.2](https://github.com/buluma/ansible-role-update_pip_packages/tree/26.6.2) (2026-07-23)
 
 [Full Changelog](https://github.com/buluma/ansible-role-update_pip_packages/compare/26.6.1...26.6.2)
