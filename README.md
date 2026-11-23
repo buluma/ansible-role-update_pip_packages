@@ -59,6 +59,15 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
         - resolvelib
         - dbus-python
         - setuptools
+        - gpg
+        - python-apt
+        - python3-apt
+        - six
+        - systemd-python
+        - dnf
+        - libdnf5
+        - libdnf5_cli
+        - rpm
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-update_pip_packages/blob/master/molecule/default/prepare.yml):
